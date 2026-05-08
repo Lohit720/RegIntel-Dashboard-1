@@ -86,10 +86,13 @@ export default function Dashboard() {
       {/* NAVBAR */}
       <nav className="sticky top-0 z-40 h-14 bg-[#0A0F14] border-b border-[#1E2A35] flex items-center px-6 gap-4">
         {/* Logo */}
-        <div className="flex items-center gap-2 mr-6 flex-shrink-0">
-          <div className="w-7 h-7 rounded-lg bg-[#00B5A3]/15 border border-[#00B5A3]/40 flex items-center justify-center logo-glow">
-            <span className="text-[#00B5A3] font-bold font-heading text-xs">7D</span>
-          </div>
+        <div className="flex items-center gap-3 mr-6 flex-shrink-0">
+          <img
+            src="/720degrees-logo.png"
+            alt="720 Degrees"
+            className="h-6 w-auto logo-glow"
+          />
+          <div className="w-px h-5 bg-[#1E2A35]" />
           <div>
             <span className="text-sm font-bold font-heading text-[#00B5A3] tracking-tight">RegIntel</span>
             <p className="text-[9px] text-[#7A9BB5] leading-none -mt-0.5">Regulatory Intelligence</p>
