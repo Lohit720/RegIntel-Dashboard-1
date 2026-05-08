@@ -1,0 +1,31 @@
+KPI ROW (6 glassmorphism cards, grid-cols-6, gap-4, below navbar):
+Each card: bg #111820, border #1E2A35, rounded-2xl, p-5, hover:border-[#00B5A3]/40 transition
+
+Card 1 — "Total Active Processes": 847 | teal up-arrow | +12% vs last month | icon: layers
+Card 2 — "Avg Clock Counter": 1,138 days | muted arrow | -3% | icon: clock | subtitle "regulatory days"
+Card 3 — "Pending Analysis": 23 | amber warning dot | highlight border amber | icon: alert-circle
+Card 4 — "Completed This Month": 61 | green up-arrow | +8% | icon: check-circle
+Card 5 — "New Entries (MTD)": 14 | teal | icon: file-plus
+Card 6 — "Areas Under Review": 5 | muted | icon: map-pin | list: CBRES, CETER, GESEF, COIFA, GQMED as tiny pills
+
+BELOW KPIs — 2-col layout (60% / 40%):
+
+LEFT COL:
+1. "Process Status by Area" — Recharts horizontal stacked BarChart, 320px height
+   Data: areas = [CBRES, CETER, GESEF, COIFA, GQMED]
+   Stacks: Em análise (#00B5A3), Concluída análise (#00C896), Anuído (#7A9BB5), Distribuído (#FFB347)
+   Custom tooltip with dark bg. Legend below. Axis text #7A9BB5.
+
+2. "Recent Processes Table" (below chart, full width of col):
+   Search bar top-right (teal focus ring). Columns: Process No. | Molecule | Entry Date | Clock Counter | Subject | Status
+   Status pills: Em análise=teal, Concluída=green, Anuído=gray, Distribuído=amber
+   5 rows of mock data using the process numbers: 25351006816202392, 25351085278202394, 25351486491202310, 25351240993202487, 25351087708200930
+   Horizontally scrollable wrapper. Row hover bg #1A2535.
+
+RIGHT COL:
+1. "Area Activity Heatmap" — CSS grid table
+   Rows: CBRES, CETER, GESEF, COIFA, GQMED
+   Cols: 18/02/2026, 08/12/2025, 03/12/2025
+   Cells with values (10, 22, etc.) use teal opacity fill based on intensity. Empty cells = #0A0F14. Rounded cells, 48px square.
+
+2. "Clock Counter Trend" — Recharts AreaChart, 6 months, gradient teal fill (#00B5A3 → transparent), 200px height. Months: Dec–May. Values: [1050, 1100, 1080, 1130, 1115, 1138]

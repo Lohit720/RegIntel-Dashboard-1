@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --font-sans: 'DM Sans', sans-serif;
+  --font-heading: 'Sora', sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: #0A0F14;
+  --foreground: #F0F4F8;
+  --border: #1E2A35;
+  --input: #1E2A35;
+  --ring: #00B5A3;
+  --card: #111820;
+  --card-foreground: #F0F4F8;
+  --popover: #111820;
+  --popover-foreground: #F0F4F8;
+  --primary: #00B5A3;
+  --primary-foreground: #0A0F14;
+  --secondary: #1E2A35;
+  --secondary-foreground: #F0F4F8;
+  --muted: #1A2535;
+  --muted-foreground: #7A9BB5;
+  --accent: #00D4C0;
+  --accent-foreground: #0A0F14;
+  --destructive: #FF6B6B;
+  --destructive-foreground: #F0F4F8;
+  --chart-1: #00B5A3;
+  --chart-2: #00C896;
+  --chart-3: #7A9BB5;
+  --chart-4: #FFB347;
+  --chart-5: #FF6B6B;
+  --radius: 0.75rem;
+
+  --teal: #00B5A3;
+  --teal-2: #00D4C0;
+  --danger: #FF6B6B;
+  --warning: #FFB347;
+  --success: #00C896;
+  --surface: #111820;
+  --surface-2: #1A2535;
+  --text-primary: #F0F4F8;
+  --text-muted: #7A9BB5;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #00B5A3 #111820;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #111820;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #00B5A3;
+    border-radius: 3px;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Sora', sans-serif;
+  }
+
+  .card-hover {
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  .card-hover:hover {
+    transform: scale(1.01);
+    border-color: rgba(0, 181, 163, 0.5) !important;
+  }
+
+  .nav-pill-active {
+    background-color: #00B5A3;
+    color: #0A0F14;
+    box-shadow: 0 0 12px rgba(0, 181, 163, 0.3);
+  }
+
+  .table-row-hover:hover {
+    background-color: #1A2535;
+    border-left: 2px solid #00B5A3;
+  }
+
+  @keyframes countUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-count-up {
+    animation: countUp 0.5s ease forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.4s ease forwards;
+  }
+
+  .glow-teal {
+    box-shadow: 0 0 12px rgba(0, 181, 163, 0.3);
+  }
+
+  .logo-glow {
+    filter: drop-shadow(0 0 8px rgba(0, 181, 163, 0.6));
+  }
+}
